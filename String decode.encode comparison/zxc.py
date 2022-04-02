@@ -1,25 +1,34 @@
 f1 = open('input.txt', 'r')
-f2 = open('output.txt', 'w')
-n = list(map(str, f1.readline()))
-rez = []
-a = 1
 
-for i in range(len(n)-1):
-    if i == len(n)-2:
-        if n[-1] == n[-2]:
-            rez.append(n[i])
-            rez.append(str(a+1))
-        else:
-            rez.append(n[i])
-            rez.append(str(a))
-            rez.append(n[-1])
-            rez.append('1')
-    else:
-        if n[i] == n[i+1]:
+data = f1.readline().split(', ')
+data1 = list(data[0])
+data2 = list(data[1])
+del data1[0]
+del data1[-1]
+del data2[0]
+del data2[-1]
+data2 = ''.join(data2)
+
+def func(data1):
+    a = 1
+    rez_data1 = []
+    for i in range(len(data1)-1):
+
+        if data1[i] == data1[i+1]:
             a += 1
+            print(a)
         else:
-            rez.append(n[i])
-            rez.append(str(a))
-            a = 1
+            rez_data1.append(data1[i])
+            if a != 1:
+                rez_data1.append(str(a))
+                a = 1
+    
+    if data1[-2] != data1[-1]:
+        rez_data1.append(data1[-1])
+    print(rez_data1)
 
-f2.write(''.join(rez))
+    if ''.join(rez_data1) == data2:
+        return True
+    else:
+        return False
+print(func(data1))
