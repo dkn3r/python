@@ -11,7 +11,7 @@ def func(read):
         if sum(first_part) == sum(read): # перевірка чи суми списків рівні
             key = False
             return first_part 
-        if len(read) == 0:        # щоб не виходило за межі списку
+        if len(read) == 1:        # це якщо перевірка пройшла до останнього елементу і не знайшла рівні суми
             key = False
             return False
 
