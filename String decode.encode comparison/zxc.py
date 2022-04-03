@@ -1,12 +1,15 @@
 f1 = open('input.txt', 'r')
 
 data = f1.readline().split(', ')
-data1 = list(data[0])
+
+data1 = list(data[0])  # видалення лапок
 data2 = list(data[1])
 del data1[0]
 del data1[-1]
 del data2[0]
 del data2[-1]
+
+
 rez2 = ''.join(data2)
 
 
@@ -25,9 +28,11 @@ def func(data1):
             if a != 1:
                 rez1.append(str(a))
             a = 1
+
         if i == len(data1)-2 and data1[-1] != data1[-2]:
             rez1.append(data1[-1])
-    if ''.join(rez1) == rez2:
+
+    if ''.join(rez1) == rez2:  # перевірка
         return True
     else:
         return False
