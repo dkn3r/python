@@ -39,3 +39,4 @@ def func(data1):
 
 
 print(func(data1))
+f1.close()
