@@ -20,3 +20,4 @@ if result == False: # це щоб не було квадратних дужок 
     print(result)
 else:
     print(result,read)
+    print('True')
