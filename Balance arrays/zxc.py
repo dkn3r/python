@@ -1,6 +1,6 @@
 f1 = open('input.txt', 'r')
 
-read = list(map(int, f1.readline().split(', ')))  # зчитування чисел через кому
+read = list(map(int, f1.readline().split(', ')))
 f1.close()
 
 def func(read):
