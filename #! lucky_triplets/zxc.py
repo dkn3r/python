@@ -32,9 +32,9 @@ def main(numbers):
     lucky_triplets = 0
     for first in range(len(numbers)):
         for second in range(first+1, len(numbers)):
-            if numbers[second] % numbers[first] == 0:
+            if numbers[second] % numbers[first] == 0 and numbers[first] <= numbers[second]:
                 for third in range(second+1, len(numbers)):
-                    if numbers[third] % numbers[second] == 0:
+                    if numbers[third] % numbers[second] == 0 and numbers[first] <= numbers[second]:
                         lucky_triplets += 1
     return lucky_triplets
 # start_time = time.time()
