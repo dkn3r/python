@@ -6,7 +6,7 @@ f1.close()
 
 
 # --- 0.0009884834289550781 seconds ---
-''' this function is for all identical numbers in the list '''
+''' this function is for all the same numbers in the list '''
 
 
 def all_the_same(numbers):
@@ -25,7 +25,7 @@ def all_the_same(numbers):
 
 
 # --- 0.0010066032409667969 seconds ---
-''' this function is for all non-identical numbers in the list '''
+''' this function is for all different numbers in the list '''
 
 
 def main(numbers):
