@@ -4,10 +4,9 @@ f1 = open('input.txt', 'r')
 numbers = list(map(int, f1.readline().split(', ')))
 f1.close()
 
+#start_time = time.time()
 
-''' this function is for all the same numbers in the list 
-    --- 0.0009884834289550781 seconds ---'''
-
+'''if all the same numbers'''
 
 def all_the_same(numbers):
     if len(set(numbers)) == 1:
@@ -22,25 +21,24 @@ def all_the_same(numbers):
     else:
         return False
 
+'''if all the different numbers'''
 
-''' this function is for all different numbers in the list
-    --- 0.0010066032409667969 seconds --- '''
+def solution(numbers):
+    count = 0
+    size = len(numbers)
 
+    cache = [0] * size
+    for x in range(size):
+        for y in range(x+1, size):
+            if numbers[y] % numbers[x] == 0:
+                cache[y] += 1
+                count += cache[x]
 
-def main(numbers):
-    lucky_triplets = 0
-    for first in range(len(numbers)):
-        for second in range(first+1, len(numbers)):
-            if numbers[second] % numbers[first] == 0 and numbers[first] <= numbers[second]:
-                for third in range(second+1, len(numbers)):
-                    if numbers[third] % numbers[second] == 0 and numbers[second] <= numbers[third]:
-                        lucky_triplets += 1
-    return lucky_triplets
-# start_time = time.time()
-# print("--- %s seconds ---" % (time.time() - start_time))
-
+    return count
 
 if all_the_same(numbers) == False:
-    print(main(numbers))
+  print(solution(numbers),1)
+  #print("--- %s seconds ---" % (time.time() - start_time))
 else:
-    print(all_the_same(numbers))
+  print(all_the_same(numbers),2)
+  #print("--- %s seconds ---" % (time.time() - start_time))
