@@ -3,7 +3,6 @@ data = list(f1.readline())
 f1.close()
 def solution(data):
     size = len(data)
-    q = 0
     for i in range(size-1):
         if data[i] == '[':
             for j in range(i,size):
